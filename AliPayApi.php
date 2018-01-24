@@ -24,7 +24,6 @@ class AliPayApi
     private static function qrcodeParams($price, $iid)
     {
         $data['app_id'] = Yii::$app->params['aliPay']['appid'];
-        // $data['app_id'] = '2016091300499218';
         $data['method'] = 'alipay.trade.precreate';
         $data['format'] = 'JSON';
         $data['charset'] = 'UTF-8';
@@ -53,8 +52,8 @@ class AliPayApi
     {
         $data['out_trade_no'] = $iid;
         $data['total_amount'] = $price;
-        $data['subject'] = '快帮云支付';
-        $data['body'] = '快帮云支付';
+        $data['subject'] = '支付';
+        $data['body'] = '支付';
         $data['timeout_express'] = '120m';
         return json_encode($data, JSON_UNESCAPED_UNICODE);
     }
