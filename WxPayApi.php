@@ -6,7 +6,7 @@ use Yii;
 class PayApi
 {
     const QRCODEURL = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
-    const WXKEY = 'kuaibangyun1234554321kuaibangyun';
+    const WXKEY = '123';
     const OPENURL = 'https://api.weixin.qq.com/sns/oauth2/access_token';
 
     public static function wxQrcode($price, $iid)
@@ -48,7 +48,7 @@ class PayApi
         $data['device_info'] = 'WEB';
         $data['nonce_str'] = (string)mt_rand(10000000, 99999999);
         $data['sign_type'] = 'MD5';
-        $data['body'] = '快帮云支付';
+        $data['body'] = '支付';
         $data['out_trade_no'] = $iid;
         $data['fee_type'] = 'CNY';
         $data['total_fee'] = $price * 100;
@@ -70,7 +70,7 @@ class PayApi
         $data['device_info'] = 'WEB';
         $data['nonce_str'] = (string)mt_rand(10000000, 99999999);
         $data['sign_type'] = 'MD5';
-        $data['body'] = '快帮云支付';
+        $data['body'] = '支付';
         $data['out_trade_no'] = $iid;
         $data['fee_type'] = 'CNY';
         $data['total_fee'] = $price * 100;
